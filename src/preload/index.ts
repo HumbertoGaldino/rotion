@@ -1,5 +1,4 @@
 import { contextBridge, ipcRenderer } from 'electron'
-import { electronAPI, ElectronAPI } from '@electron-toolkit/preload'
 import { IPC } from '@shared/constants/ipc'
 import {
   CreateDocumentResponse,
@@ -12,7 +11,6 @@ import {
 
 declare global {
   export interface Window {
-    electron: ElectronAPI
     api: typeof api
   }
 }
@@ -53,15 +51,11 @@ const api = {
 // just add to the DOM global.
 if (process.contextIsolated) {
   try {
-    contextBridge.exposeInMainWorld('electron', electronAPI)
     contextBridge.exposeInMainWorld('api', api)
   } catch (error) {
     console.error(error)
   }
 } else {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore (define in dts)
-  window.electron = electronAPI
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (define in dts)
   window.api = api
