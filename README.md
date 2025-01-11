@@ -80,10 +80,9 @@
 
   <hr />
 
-  
 
 
- <h3>👨‍💻 Desenlvolvido por:</h3>
+ <h3 id="autores">👨‍💻 Desenlvolvido por:</h3>
  
   [![GitHub](https://img.shields.io/badge/Humberto-%23483D8B?style=for-the-badge)](https://github.com/HumbertoGaldino)
   [![Rocketseat](https://img.shields.io/badge/Rocketseat-%237159c1?style=for-the-badge&logo=rocket&logoColor=white)](https://www.rocketseat.com.br/)
